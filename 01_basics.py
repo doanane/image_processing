@@ -44,7 +44,12 @@ print(f"Dimensions: {arr_2d.ndim}")  # 2 dimensions
 # Create a 3D array (like a color image - RGB)
 arr_3d = np.array([[[255, 0, 0], [0, 255, 0]],
                    [[0, 0, 255], [255, 255, 0]]])
-print(f"\n3D Array shape: {arr_3d.shape}")  # (2, 2, 3) - 2 rows, 2 cols, 3 channels
+print(f"\n3D Array shape: {arr_3d.shape}")  
+# 2 rows  ->
+# 2 columns per row 
+# 3 values per pixel
+
+# (2, 2, 3) - 2 rows, 2 cols, 3 channels
 
 # ============================================================================
 # SECTION 3: ARRAY OPERATIONS (ESSENTIAL FOR IMAGE PROCESSING)
@@ -92,6 +97,8 @@ gradient = np.array([[0, 64, 128, 192, 255],
                      [0, 64, 128, 192, 255]])
 print(f"\nGradient image:\n{gradient}")
 
+print(f"Shape: {gradient.shape}")  
+print(f"Dimensions: {gradient.ndim}")
 # ============================================================================
 # SECTION 5: INDEXING AND SLICING (ACCESSING PIXELS)
 # ============================================================================
@@ -105,17 +112,14 @@ image = np.array([[10, 20, 30, 40],
 print(f"Original image:\n{image}")
 
 # Access single pixel
-pixel = image[1, 2]  # Row 1, Column 2
-print(f"\nPixel at (1,2): {pixel}")
+pixel = image[0, 2]  # Row 0, Column 2
+print(f"\nPixel at (0,2): {pixel}")
 
-# Access a row
 row = image[1, :]  # All columns in row 1
 print(f"Row 1: {row}")
-
 # Access a column
 column = image[:, 2]  # All rows in column 2
 print(f"Column 2: {column}")
-
 # Access a region (Region of Interest - ROI)
 roi = image[0:2, 1:3]  # Rows 0-1, Columns 1-2
 print(f"\nRegion of Interest:\n{roi}")

@@ -23,52 +23,52 @@ img = io.imread('images/image2.jpg')
 
 # show()
 
-# # converting to gray scale
-# img_gray = color.rgb2gray(img)
-#  # Convert back to RGB
-# img_rgb = color.gray2rgb(img_gray)
-#  # Show both figures
-
-# figure(0)
-# imshow(img_gray)
-# title('RGB Image')
-
-# figure(1)
-# imshow(img_rgb)
-# title('GRAY Image')
-
-# show()
-
-# # converting to gray scale
-# img_gray = color.rgb2gray(img)
-#  # Convert back to RGB
-# img_rgb = color.gray2rgb(img_gray)
-#  # Show both figures
-
-# figure(0)
-# imshow(img_gray)
-# title('RGB Image')
-
-# figure(1)
-# imshow(img_rgb)
-# title('GRAY Image')
-
-# show()
-
-
-# Convert to XYZ Color Space
-img_xyz = color.rgb2xyz(img)
+# converting to gray scale
+img_gray = color.rgb2gray(img)
  # Convert back to RGB
-img_rgb = color.xyz2rgb(img_xyz)
+img_rgb = color.gray2rgb(img_gray)
+ # Show both figures
 
-
- 
 figure(0)
-imshow(img_xyz)
-title('XYZ Image')
+imshow(img_gray)
+title('RGB Image')
 
 figure(1)
 imshow(img_rgb)
-title('RGB Image')
+title('GRAY Image')
 
 show()
+
+# converting to gray scale
+img_gray = color.rgb2gray(img)
+ # Convert back to RGB
+img_rgb = color.gray2rgb(img_gray)
+ # Show both figures
+
+figure(0)
+imshow(img_gray)
+title('RGB Image')
+
+figure(1)
+imshow(img_rgb)
+title('GRAY Image')
+
+show()
+
+
+# # Convert to XYZ Color Space
+# img_xyz = color.rgb2xyz(img)
+#  # Convert back to RGB
+# img_rgb = color.xyz2rgb(img_xyz)
+
+
+ 
+# figure(0)
+# imshow(img_xyz)
+# title('XYZ Image')
+
+# figure(1)
+# imshow(img_rgb)
+# title('RGB Image')
+
+# show()

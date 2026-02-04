@@ -8,9 +8,10 @@ img_rgb= cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 img_gray =cv2.imread("images/dog.png", cv2.IMREAD_GRAYSCALE)
 
 print("data type", img.dtype)
-print("Image shape:", img.shape)
 print("min pixel:", img.min())
 print("max pixel:", img.max())
+
+print("Image shape:", img.shape)
 
 plt.figure(figsize=(10,4))
 plt.subplot(1,2,1)

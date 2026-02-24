@@ -731,3 +731,33 @@ print("• How to evaluate restoration quality")
 cv2.imwrite('images/original_portrait.png', clean_image)
 cv2.imwrite('images/restored_portrait.png', restored_photo)
 print("\n Sample images saved to 'images/' folder")
+
+
+def restoration_checklist(image, problem_description):
+    """
+    Decision tree for choosing restoration method
+    """
+    
+    
+    if "blurry" in problem_description.lower():
+        if "motion" in problem_description.lower():
+            return "Wiener Filter with motion PSF"
+        else:
+            return "Lucy-Richardson Deconvolution"
+    
+    elif "noisy" in problem_description.lower():
+        
+        unique_values = len(np.unique(image))
+        if unique_values < 50:  
+            return "Median Filter"
+        else:
+            return "Total Variation Denoising"
+    
+    elif "scratched" in problem_description.lower():
+        return "Inpainting"
+    
+    elif "old" in problem_description.lower() or "faded" in problem_description.lower():
+        return "Histogram Equalization + Sharpening"
+    
+    else:
+        return "Try combination of methods"
